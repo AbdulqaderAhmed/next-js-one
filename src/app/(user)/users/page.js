@@ -1,4 +1,4 @@
-import { redirect } from 'next/navigation'
+import { redirect } from "next/navigation";
 import Image from "next/image";
 
 export default async function Users() {
@@ -6,12 +6,12 @@ export default async function Users() {
   try {
     const res = await fetch("https://jsonplaceholder.typicode.com/photos");
     data = await res.json();
-    if(!res.ok){
-      throw new Error('Failed to fetch data')
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
     }
   } catch (error) {
     console.log(error);
-    redirect('/users/7')
+    redirect("/users/7");
   }
 
   return (
